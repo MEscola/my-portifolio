@@ -7,13 +7,19 @@ const Menu = () => {
         <S.Box>
             <S.MenuList>
         <S.ItemList>
-            <a href="#">About</a>
+            <a href="#">HOME</a>
         </S.ItemList>
         <S.ItemList>
-            <a href="#">Skills</a>
+            <a href="#">SOBRE</a>
         </S.ItemList>
         <S.ItemList>
-            <a href="#">Projects</a>
+            <a href="#">TECNOLOGIAS</a>
+        </S.ItemList>
+        <S.ItemList>
+            <a href="#">PROJETOS</a>
+        </S.ItemList>
+        <S.ItemList>
+            <a href="#">CONTATO</a>
         </S.ItemList>
          
       </S.MenuList>
