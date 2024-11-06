@@ -10,7 +10,7 @@ const Menu = () => {
             <a href="#">HOME</a>
         </S.ItemList>
         <S.ItemList>
-            <a href="#">SOBRE</a>
+            <a href="./about">SOBRE</a>
         </S.ItemList>
         <S.ItemList>
             <a href="#">TECNOLOGIAS</a>
