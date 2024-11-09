@@ -1,12 +1,57 @@
-import * as S from "./style-about";
+import { useLayoutEffect, useRef } from 'react';
+import gsap from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
+import * as S from './style-about';
 
-const About = () => {
+const About: React.FC = () => {
+  const el = useRef<HTMLDivElement | null>(null);
+  const allTitles = gsap.utils.toArray('.row') as HTMLElement[];
+  let offsets: number[] = [];
+  let totalOffset = 0;
+
+  // Função para calcular os offsets de cada título
+  function calculateOffsets() {
+    totalOffset = 0;
+    offsets = allTitles.map((title) => {
+      const h2 = title.querySelector("h2") as HTMLElement;
+      const prev = totalOffset;
+      totalOffset += h2 ? h2.offsetHeight : 0;
+      return prev;
+    });
+  }
+
+  useLayoutEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    calculateOffsets();
+    window.addEventListener("resize", calculateOffsets);
+
+    allTitles.forEach((title, i) => {
+      const heading = title.querySelector(".left") as HTMLElement;
+      if (heading) {
+        ScrollTrigger.create({
+          trigger: heading,
+          endTrigger: ".row-wrap",
+          start: () => `top ${offsets[i]}`,
+          end: () => `bottom ${totalOffset}`,
+          pin: heading,
+          pinSpacing: false,
+        });
+      }
+    });
+
+    return () => {
+      window.removeEventListener("resize", calculateOffsets);
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    };
+  }, []);
+
   return (
     <>
       <S.Container>
-        <div className="row-wrap">
+        <div className="row-wrap" ref={el}>
           <div className="row">
-            <div className="left">
+            <div className="left" id="sobre">
               <h2>Sobre Mim</h2>
             </div>
             <div className="right">
@@ -28,7 +73,7 @@ const About = () => {
           </div>
 
           <div className="row">
-            <div className="left">
+            <div className="left" id="cert">
               <h2>Certificações</h2>
             </div>
 
@@ -39,7 +84,7 @@ const About = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <p>AWS Certified Cloud Practitioner </p>
+                  <p>AWS Certified Cloud Practitioner</p>
                 </a>
 
                 <a href="#" target="_blank" rel="noopener noreferrer">
@@ -59,8 +104,6 @@ const About = () => {
                 </a>
               </div>
             </div>
-
-            {/*//TODO <img src={} alt="NicolyTech" />*/}
           </div>
         </div>
       </S.Container>

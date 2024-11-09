@@ -6,8 +6,10 @@ export const Container = styled.div`
   //align-items: left;
   padding: 5rem;
   //width: 100%;
-  background-color: #2e2e2e;
-  color: #d9d9d9;
+  background-color: black;
+  color: #a6a6a6;
+  margin: 0;
+  
   
   .row {
   display: flex;
@@ -19,29 +21,51 @@ export const Container = styled.div`
   .row .right{ width: 60%; }
   .row + .row{ margin-top: 50px; }
 
+  .left {
+    //transform: translateX(-200px) rotate(180deg);
+    //opacity: 0;
+  }
+
+  .pin-spacer {
+  /* to get around an odd browser rounding issue that happens when it gets converted to pixels */
+  width: 40% !important;
+}
+
   h2 {
     font-size: 2rem;
-    
-    
-    
+    color: #a6a6a6;
+
   }
 
   p {
     font-size: 1rem;
     text-align: justify;
+    margin-bottom: .7rem;
+   
+    
     
   }
 
   a {
-    color: #fff;
+    color: #a6a6a6;
     font-weight: 600;
-    animation: fadeIn 0.5s ease-in-out;
+    font-size: .9rem;
+    
+    
+    
+   
   }
 
-  .btn {
-    margin-top: 1rem;
-    margin-left: auto;
-    margin-right: auto;
+  a.btn {
+    color: black;
+   background: linear-gradient(90deg, #a6a6a6, #d9d9d9);
+  padding: .5rem 1rem;
+   border-radius: 3rem;
+    
+    &:hover {
+      color: #fff;
+    }
+    
   }
 
   @keyframes fadeIn {
@@ -50,6 +74,25 @@ export const Container = styled.div`
     }
     100% {
       opacity: 1;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    h2{
+      font-size: 1rem;
+      
+    }
+
+    p{
+      font-size: .7rem;
+    }
+    
+    a {
+      font-size: .7rem;
+    }
+
+    a.btn {
+      padding: .3rem .6rem;
     }
   }
 `;
