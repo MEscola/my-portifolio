@@ -1,17 +1,19 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  
+ 
   box-sizing: border-box;
-  //align-items: left;
-  padding: 5rem;
-  //width: 100%;
-  background-color: black;
+
+  background-color: #2e2e2e;
   color: #a6a6a6;
   margin: 0;
   
-  
+  .row-wrap {
+    
+    background-color: black;
+  }
   .row {
+    
   display: flex;
   flex-wrap: wrap;
   padding: 15px;

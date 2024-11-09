@@ -32,6 +32,7 @@ const About: React.FC = () => {
         ScrollTrigger.create({
           trigger: heading,
           endTrigger: ".row-wrap",
+          markers: true,
           start: () => `top ${offsets[i]}`,
           end: () => `bottom ${totalOffset}`,
           pin: heading,

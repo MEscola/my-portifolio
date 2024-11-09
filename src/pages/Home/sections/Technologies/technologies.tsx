@@ -1,18 +1,33 @@
 import * as S from '../Technologies/style-tech'
+import { FaHtml5, FaCss3, FaJs, FaReact, FaNodeJs, FaGit, FaPython, FaAws, } from 'react-icons/fa'
+
+const icons = [
+    { name: 'html', icon: <FaHtml5 /> },
+    { name: 'css', icon: <FaCss3 /> },
+    { name: 'javascript', icon: <FaJs /> },
+    { name: 'react', icon: <FaReact /> },
+    { name: 'nodejs', icon: <FaNodeJs /> },
+    { name: 'git', icon: <FaGit /> },
+    { name: 'python', icon: <FaPython /> },
+    //{ name: 'mysql', icon: <FaMysql /> },
+    { name: 'aws', icon: <FaAws /> },
+]
 
 const Technologies = () => {
     return (
         <>
         <S.Container>
-            <h1>Technologies</h1>
-            <p>Lorem Ipsum
-"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
-"There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain..."
-What is Lorem Ipsum?
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-What is Lorem Ipsum?
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-</p>
+            <div className='tech'>
+            <h1>TECNOLOGIAS</h1>
+            <p>Tecnologias em que possuo conhecimento, profissional ou acadêmico.</p>
+            <div className='grid'>
+                
+                {icons.map((icon) => (
+                    <div key={icon.name} className='icon'>{icon.icon}</div>
+                ))}
+            </div>
+            </div>
+            
             
         </S.Container>
         </>
