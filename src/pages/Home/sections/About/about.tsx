@@ -52,11 +52,9 @@ const About: React.FC = () => {
       <S.Container>
         <div className="row-wrap" ref={el}>
           <div className="row">
-            <div className="left" id="sobre">
+            <div className="left" >
               <h2>Sobre Mim</h2>
-            </div>
-            <div className="right">
-              <p>
+              <p className='about'>
                 Sou estudante de Análise e Desenvolvimento de Sistemas,
                 apaixonada por tecnologia e pelo desenvolvimento de software.
                 Estou constantemente aprimorando minhas habilidades e explorando
@@ -65,21 +63,15 @@ const About: React.FC = () => {
                 desafio é uma oportunidade de crescimento, e meu objetivo é
                 evoluir continuamente como desenvolvedora, contribuindo com
                 soluções criativas e inovadoras.
+                <br />
               </p>
               <a href="https://www.linkedin.com/" className="btn">
                 Visitar Linkedin
               </a>
-              <br />
             </div>
-          </div>
-
-          <div className="row">
-            <div className="left" id="cert">
-              <h2>Certificações</h2>
-            </div>
-
             <div className="right">
-              <div>
+            <h2>Certificações</h2>
+            <div className='right-text'>
                 <a
                   href="https://www.credly.com/badges/f8c40744-b847-4959-a7fb-7c562d4658ae/public_url"
                   target="_blank"
@@ -99,11 +91,16 @@ const About: React.FC = () => {
                 >
                   <p>API Security</p>
                 </a>
-
+                <br />
                 <a href="#" className="btn">
                   Ver mais
                 </a>
               </div>
+            </div>
+          </div>
+
+          <div className="row">
+            <div className="left" id="cert">
             </div>
           </div>
         </div>

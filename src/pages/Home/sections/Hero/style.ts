@@ -10,7 +10,7 @@ export const Container = styled.div`
    //display: grid;
    //grid-template-columns: repeat(2, 1fr); /* 3 colunas iguais */
    //gap: 0px; /* Espaço entre os itens */
-   min-height: 100vh;
+   //min-height: 100vh;
    position: relative;
    //display: flex;
     flex-direction: column;
@@ -112,12 +112,12 @@ export const Container = styled.div`
    //VERSÃO MOBILE
 
    @media screen and (max-width: 768px) {
-    .main {
+    //.main {
       
-        padding: 7rem;
+    //    padding: 7rem;
         /* height: absolute; */ /* 'absolute' não é um valor válido para height */
-        margin-top: -1rem;
-    }
+    //    margin-top: -1rem;
+   // }
 
       .img{
          max-width: 80%  

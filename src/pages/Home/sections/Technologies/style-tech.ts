@@ -28,4 +28,16 @@ p {
     font-size: 3rem;
     color: #2e2e2e;
 }
+
+@media screen and (max-width: 768px) {
+  
+  h1 {
+      font-size: 1.5rem;
+      margin-top: 8px;
+  } 
+
+  p {
+    font-size: 1rem;
+  }
+}
 `
